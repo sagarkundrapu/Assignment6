@@ -4,6 +4,10 @@ import os
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return {'status': 'success', 'message': 'Welcome to the homepage!'}, 200
+
 @app.route('/api')
 def api():
     base_dir = os.path.dirname(os.path.abspath(__file__))
